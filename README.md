@@ -2,7 +2,7 @@
 ## a dashboard for windows to do random stuff, coded in Autohotkey
 ---
 current features:
-- quickly set iconsfor windows folders
+- quickly set icons for windows folders
 
 ## instructions
 ### Windows 11
