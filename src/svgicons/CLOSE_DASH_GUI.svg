@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="135.46666mm"
+   height="135.46666mm"
+   viewBox="0 0 135.46666 135.46666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="CLOSE_DASH_GUI.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.72871773"
+     inkscape:cx="109.09574"
+     inkscape:cy="266.90719"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="1791"
+     inkscape:window-y="161"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:5.1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="135.20253"
+       height="135.20253"
+       x="0.132071"
+       y="0.132071"
+       ry="20.023542"
+       rx="0" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264278;stroke-linejoin:round;stroke-miterlimit:5.1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4"
+       width="23.812513"
+       height="135.46675"
+       x="-11.906256"
+       y="28.055988"
+       ry="9.5124693"
+       transform="matrix(0.7071078,-0.70710576,0.70710706,0.7071065,0,0)" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264278;stroke-linejoin:round;stroke-miterlimit:5.1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4-3"
+       width="23.812513"
+       height="135.46675"
+       x="-107.69562"
+       y="-67.733276"
+       ry="9.5124693"
+       transform="matrix(-0.7071078,-0.70710576,-0.70710706,0.7071065,0,0)" />
+  </g>
+</svg>
