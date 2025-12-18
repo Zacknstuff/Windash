@@ -5,5 +5,7 @@ current features:
 - quickly set iconsfor windows folders
 
 ## instructions
-go to windows > settings > 
-![image info](./pictures/image.png)
+### Windows 11
+go to settings > Accessibility > keyboard
+
+![](./src/Documentation/Docimages/prtscrsetting.png)
