@@ -6,6 +6,12 @@ current features:
 
 ## instructions
 ### Windows 11
-go to settings > Accessibility > keyboard
+
+1 go to settings > Accessibility > keyboard
 
 ![](./src/Documentation/Docimages/prtscrsetting.png)
+
+2 deselect "Use the print screen key to open screen capture
+
+
+
