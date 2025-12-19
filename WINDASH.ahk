@@ -5,20 +5,20 @@
 
 ; cmd attribute set GUI----------------------------------------------------------------------------------------V
 
-folderpath := "" ; sets the folder path to null
+folderpath := "null" ; sets the folder path to null
 
-iconpath := "" ; sets the folder Icon path to null
+iconpath := "null" ; sets the folder Icon path to null
 
 ;creates a GUI called "cmdgui" that has the title: "file icon setter"
 cmdgui := Gui("","file icon setter")
 
-folderpathedit := cmdgui.Add("Edit", "w200", "Path to folder")
+folderpathedit := cmdgui.Add("Edit", "w250", "Path to folder")
 
 ;adds a button to the cmd GUI at x+5 y+5 that says "path"
 folderpathbutton := cmdgui.Add("Button", "x+5 y5 w80 h25", "path")
 
 ;creates a textbox that says: path to icon
-foldericonedit := cmdgui.Add("Edit", "w200 x10", "Path to icon")
+foldericonedit := cmdgui.Add("Edit", "w250 x10", "Path to icon")
 
 ;adds a button to the cmd GUI at x+5 y+5 that says "path"
 iconpathbutton := cmdgui.Add("Button", "x+5 w80 h25", "path")
@@ -31,13 +31,65 @@ OK := cmdgui.Add("Button", "Default w80 x10 y60", "OK")
 ;executes "choosefolderpath" function, passing 2 values to it, when the button is pressed
 folderpathbutton.OnEvent('Click', choosefolderpath) 
 
-;executes "clickeed" function, passing 2 values to it, when the button is pressed
-OK.OnEvent('Click', clickeed) 
+
+iconpathbutton.OnEvent('Click', chooseiconpath)
+
+
+OK.OnEvent('Click', okclicked) 
+
+
+; CMD GUI functions
+
+chooseiconpath(*) {
+    iconpath := FileSelect("","Select a folder")
+    foldericonedit.Text := iconpath
+}
+
 
 choosefolderpath(*) {
     folderpath := FileSelect("D","Select a folder")
     folderpathedit.Text := folderpath
 }
+
+
+
+okclicked(*) {
+    folderpath := folderpathedit.Text
+    iconpath := foldericonedit.Text
+    SoundPlay(A_ScriptDir "/Sounds/Beep.wav")
+    if FileExist(folderpath "/desktop.ini") {
+
+        if (MsgBox("it seems that this folder already has configerations. Do you wish to proceed?", "Windash", "YesNo") == "Yes") {
+            generategui()
+        } else {
+            SoundPlay(A_ScriptDir "/Sounds/Beep.wav")
+            cmdgui.Hide()
+            MsgBox("operation canceled.","Windash")
+        }
+    } else {
+        generategui()
+    }
+}
+
+generategui() {
+    folderpath := folderpathedit.Text
+    iconpath := foldericonedit.Text
+    ;attributes the folder that needs an icon
+    cmdgui.Hide()
+
+    FileSetAttrib("S", folderpath,"D")
+
+    
+    ;creates desktop.ini file with path to icon
+    if (FileExist(folderpath "\desktop.ini")) {
+    FileDelete(folderpath "\desktop.ini")
+    }
+    FileAppend("[.ShellClassInfo]`nIconResource=", folderpath "/desktop.ini")
+    FileAppend(iconpath, folderpath "/desktop.ini")
+    FileAppend(",0", folderpath "/desktop.ini")
+    FileSetAttrib("H", folderpath "\desktop.ini","F")
+}
+
 
 ; Dashboard GUI------------------------------------------------------------------------------------------------V
 
@@ -133,14 +185,10 @@ PrintScreen::{
 ;functions
 
 
-clickeed(*) {
-    if (FileExist(A_ScriptDir "/generatedcommand.bat")) {
-    FileDelete(A_ScriptDir "/generatedcommand.bat")
-    }
-    FileAppend("attrib +s `"", A_ScriptDir "/generatedcommand.bat")
-    FileAppend(folderpath, A_ScriptDir "/generatedcommand.bat")
-    FileAppend("`"",A_ScriptDir "/generatedcommand.bat")
-    Run(A_ScriptDir "\generatedcommand.bat")
-    FileDelete(A_ScriptDir "/generatedcommand.bat")
-    cmdgui.Hide()
+
+;logs file contents of a directory
+log_file_contents(directory) {
+    FileAppend(FileRead(directory),
+    A_ScriptDir "/logs/log (" String(FormatTime(A_Now,"h.m.ss d_M_yyyy")) ").log")
 }
+
